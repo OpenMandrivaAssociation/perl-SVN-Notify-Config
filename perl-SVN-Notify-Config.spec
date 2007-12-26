@@ -2,7 +2,7 @@
 %define name	perl-%{module}
 %define version	0.09.07
 %define up_version	0.0907
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -31,6 +31,7 @@ perl Build.PL installdirs=vendor
 ./Build
 
 %check
+export LC_ALL=C
 ./Build test
 
 %install
