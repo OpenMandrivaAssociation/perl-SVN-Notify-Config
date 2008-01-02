@@ -19,6 +19,7 @@ BuildRequires:	perl(SVN::Notify)
 BuildRequires:	perl(YAML)
 BuildRequires:  perl(Module::Build)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is a YAML-based configuration wrapper on SVN::Notify.
