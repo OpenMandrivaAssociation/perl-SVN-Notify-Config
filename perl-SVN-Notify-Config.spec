@@ -15,6 +15,7 @@ Source:		http://www.cpan.org/modules/by-module/SVN/%{module}-%{up_version}.tar.g
 BuildRequires:	perl(SVN::Notify)
 BuildRequires:	perl(YAML)
 BuildRequires:  perl(Module::Build)
+BuildRequires:  perl(Test::Deep)
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
