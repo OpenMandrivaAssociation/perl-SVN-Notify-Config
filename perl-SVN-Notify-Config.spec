@@ -16,6 +16,7 @@ BuildRequires:	perl(SVN::Notify)
 BuildRequires:	perl(YAML)
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Test::Deep)
+BuildRequires:  subversion
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
