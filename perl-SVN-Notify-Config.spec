@@ -1,30 +1,29 @@
-%define module	SVN-Notify-Config
-%define name	perl-%{module}
-%define version	0.09.11
-%define up_version	0.0911
-%define	release	%mkrel 2
+%define upstream_name	SVN-Notify-Config
+%define upstream_version	0.0911
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Config-driven Subversion notification
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/SVN/%{module}-%{up_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/SVN/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(SVN::Notify)
 BuildRequires:	perl(YAML)
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Test::Deep)
 BuildRequires:  subversion
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is a YAML-based configuration wrapper on SVN::Notify.
 
 %prep
-%setup -q -n %{module}-%{up_version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 perl Build.PL installdirs=vendor
@@ -46,6 +45,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/SVN
 %{_mandir}/*/*
-
-
-
