@@ -1,15 +1,13 @@
 %define upstream_name	SVN-Notify-Config
-%define upstream_version	0.0911
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    4
+Version:    0.0911
+Release:    5
 
 Summary:	Config-driven Subversion notification
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/SVN-Notify-Config
-Source0:	https://cpan.metacpan.org/authors/id/J/JP/JPEACOCK/SVN-Notify-Config-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JP/JPEACOCK/SVN-Notify-Config-%{version}.tar.gz
 
 BuildRequires:	perl(SVN::Notify)
 BuildRequires:	perl(YAML)
@@ -23,7 +21,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 This module is a YAML-based configuration wrapper on SVN::Notify.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor
@@ -50,9 +48,7 @@ rm -rf %{buildroot}
 %changelog
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.91.100-1mdv2010.0
 + Revision: 404427
-- rebuild using %%perl_convert_version
-
-* Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.09.11-2mdv2009.0
+- rebuild using %0.0911 Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.09.11-2mdv2009.0
 + Revision: 268720
 - rebuild early 2009.0 package (before pixel changes)
 
